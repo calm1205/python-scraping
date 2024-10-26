@@ -18,7 +18,7 @@ class TestAddFunction(unittest.TestCase):
             """
         )
         result = fetch_href(url=test_url, href_class="test")
-        expected = [{"text": "text", "href": "href_value"}]
+        expected = [{"会社名": "text", "リンク": "href_value"}]
 
         self.assertEqual(result, expected)
 
@@ -37,9 +37,9 @@ class TestAddFunction(unittest.TestCase):
         )
         result = fetch_href(url=test_url, href_class="test")
         expected = [
-            {"text": "text", "href": "href_value"},
-            {"text": "text", "href": "href_value"},
-            {"text": "text", "href": "href_value"},
+            {"text": "会社名", "リンク": "href_value"},
+            {"text": "会社名", "リンク": "href_value"},
+            {"text": "会社名", "リンク": "href_value"},
         ]
 
         self.assertEqual(result, expected)

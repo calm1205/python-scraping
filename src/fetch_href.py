@@ -13,6 +13,6 @@ def fetch_href(*, url, href_class):
         elements = soup.find_all("a", class_=href_class)
 
         for element in elements:
-            results.append({"text": element.text, "href": element.get("href")})
+            results.append({"会社名": element.text, "リンク": element.get("href")})
 
     return results
