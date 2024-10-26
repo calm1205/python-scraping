@@ -1,5 +1,4 @@
 from urllib.parse import urlparse, parse_qs, urlunparse, urlencode
-from main import ENDPOINT
 
 
 def page_increment(*, url):
