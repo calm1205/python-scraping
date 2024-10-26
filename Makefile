@@ -1,6 +1,6 @@
 .PHONY: src tests
 
-up:
+run:
 		docker compose up -d && docker compose exec app bash
 
 test:
