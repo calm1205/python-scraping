@@ -1,0 +1,10 @@
+services:
+  app:
+    image: python-scraping
+    container_name: python-scraping
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/app/src
+    tty: true
