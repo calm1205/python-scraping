@@ -9,6 +9,9 @@ def page_increment(*, url):
     parsed_url = urlparse(url)
     query_params = parse_qs(parsed_url.query)
 
+    if query_params.get("page") is None:
+        return ""
+
     current_page = query_params.get("page")[0]
 
     query_params["page"] = int(current_page) + 1
