@@ -12,6 +12,3 @@ def fetch_selector(*, url, selector):
         elements = soup.select(selector)
 
         return elements
-
-        # for element in elements:
-        #     results.append([element.text, element.get("href")])
