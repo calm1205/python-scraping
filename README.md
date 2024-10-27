@@ -9,9 +9,9 @@ $ make run
 
 <br/><br/>
 
-## Setup
+## Setup auto test
 
 ```bash
-echo '#!/bin/sh\n\nmake test-auto' > .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
+echo '#!/bin/sh\n\nmake test-auto' > .git/hooks/pre-push
+chmod +x .git/hooks/pre-push
 ```
