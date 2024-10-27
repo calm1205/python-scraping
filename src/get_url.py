@@ -15,7 +15,7 @@ areas = [
     "kyushu",
 ]
 
-occupationTypes = [
+occupation_types = [
     "jp__engineering",
     "jp__design_and_art",
     "jp__pm_and_web_direction",
@@ -30,5 +30,5 @@ occupationTypes = [
 ]
 
 
-def get_url(*, page="1", areas="tokyo", occupationTypes="jp__engineering"):
-    return f"https://www.wantedly.com/projects?new=true&page={page}&areas={areas}&={occupationTypes}&hiringTypes=internship&hiringTypes=part_time&order=mixed"
+def get_url(*, page="1", areas="tokyo", occupation_types="jp__engineering"):
+    return f"https://www.wantedly.com/projects?new=true&page={page}&areas={areas}&occupationTypes={occupation_types}&hiringTypes=internship&hiringTypes=part_time&order=mixed"
