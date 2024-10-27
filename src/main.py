@@ -11,7 +11,7 @@ from append_csv_rows import append_csv_rows
 
 CSV_PATH = f"{project_dir}/csv/output.csv"
 HREF_SELECTOR = ".fresnel-greaterThanOrEqual-laptop .ProjectListJobPostItem__CompanyLink-sc-bjcnhh-10"
-PAGE_LIMIT = 10
+PAGE_LIMIT = 100
 
 export_csv_header(output_path=CSV_PATH)
 
@@ -30,6 +30,6 @@ for index in range(1, PAGE_LIMIT):
     ]
 
     append_csv_rows(rows=rows, csv_path=CSV_PATH)
-    print(f"done(total:\t{int(time.time() - start_time)} sec)")
+    print(f"done(total: {int(time.time() - start_time)}\tsec)")
 
 print("fetch done")
