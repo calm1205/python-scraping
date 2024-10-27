@@ -1,5 +1,5 @@
 import csv
-from src.csv_format import csv_interface
+from csv_format import csv_interface
 
 
 def export_csv_header(*, output_path):
