@@ -12,5 +12,8 @@ run:
 test:
 		docker compose exec app bash -c "make test-python"
 
+test-auto:
+		docker compose exec -T app bash -c "make test-python"
+
 test-python:
 		python -m unittest discover -s tests
