@@ -1,17 +1,17 @@
 import time
 import csv
 
-from project_dir import project_dir
-from export_csv_header import export_csv_header
-from get_url import get_url, areas, occupation_types
-from fetch_selector import fetch_selector
-from csv_format import get_csv_row
-from append_csv_rows import append_csv_rows
+from src.project_dir import project_dir
+from src.export_csv_header import export_csv_header
+from src.get_url import get_url, areas, occupation_types
+from src.fetch_selector import fetch_selector
+from src.csv_format import get_csv_row
+from src.append_csv_rows import append_csv_rows
 
 
 CSV_PATH = f"{project_dir}/csv/output.csv"
 HREF_SELECTOR = ".fresnel-greaterThanOrEqual-laptop .ProjectListJobPostItem__CompanyLink-sc-bjcnhh-10"
-PAGE_LIMIT = 100
+PAGE_LIMIT = 10
 
 export_csv_header(output_path=CSV_PATH)
 

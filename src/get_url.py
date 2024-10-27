@@ -17,16 +17,16 @@ areas = [
 
 occupation_types = [
     "jp__engineering",
-    "jp__design_and_art",
-    "jp__pm_and_web_direction",
-    "jp__editing_and_writing",
-    "jp__marketing",
-    "jp__sales",
-    "jp__customer_success_and_support",
-    "jp__corporate",
-    "jp__consulting",
-    "jp__medical",
-    "jp__others",
+    # "jp__design_and_art",
+    # "jp__pm_and_web_direction",
+    # "jp__editing_and_writing",
+    # "jp__marketing",
+    # "jp__sales",
+    # "jp__customer_success_and_support",
+    # "jp__corporate",
+    # "jp__consulting",
+    # "jp__medical",
+    # "jp__others",
 ]
 
 
