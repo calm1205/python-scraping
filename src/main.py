@@ -25,7 +25,7 @@ for area in areas:
         print(f"\toccupation_type: {occupation_type}")
 
         for index in range(1, PAGE_LIMIT):
-            print(f"\tpage {index}", end=" ")
+            print(f"\t\tpage {index}", end=" ")
 
             url = get_url(page=index, areas=area, occupation_types=occupation_type)
 
@@ -36,6 +36,10 @@ for area in areas:
                     get_csv_row(text=element.text, link=element.get("href"))
                     for element in bs_elements
                 ]
+
+                if not rows:
+                    print("no more data")
+                    break
 
                 append_csv_rows(rows=rows, csv_path=CSV_PATH)
                 print(f"(total: {int(time.time() - start_time)}\tsec)")
