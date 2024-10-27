@@ -1,10 +1,16 @@
 .PHONY: src tests
 
 up:
-		docker compose up -d && docker compose exec app bash
+		docker compose up -d
+
+in:
+		docker compose exec app bash
 
 run:
-		python -m src.main
+		docker compose exec app bash -c "python -m src.main"
 
 test:
+		docker compose exec app bash -c "make test-python"
+
+test-python:
 		python -m unittest discover -s tests
