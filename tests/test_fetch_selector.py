@@ -2,14 +2,14 @@ import unittest
 from unittest.mock import patch
 from io import BytesIO
 
-from src.fetch_href import fetch_href
+from src.fetch_selector import fetch_selector
 
 test_url = "https://example.com"
 
 
 class TestAddFunction(unittest.TestCase):
-    @patch("src.fetch_href.urlopen")
-    def test_fetch_href(self, mock_urlopen):
+    @patch("src.fetch_selector.urlopen")
+    def test_fetch_selector(self, mock_urlopen):
         """href要素を取得できること"""
 
         mock_urlopen.return_value = BytesIO(
@@ -17,13 +17,14 @@ class TestAddFunction(unittest.TestCase):
             <a class='test' href='href_value'>text</a>
             """
         )
-        result = fetch_href(url=test_url, href_class="test")
-        expected = [{"会社名": "text", "リンク": "href_value"}]
+        bs_elements = fetch_selector(url=test_url, selector=".test")
+        result = str(bs_elements[0])
+        expected = '<a class="test" href="href_value">text</a>'
 
         self.assertEqual(result, expected)
 
-    @patch("src.fetch_href.urlopen")
-    def test_fetch_href_a_lot(self, mock_urlopen):
+    @patch("src.fetch_selector.urlopen")
+    def test_fetch_selectors(self, mock_urlopen):
         """複数のhref要素を取得できること"""
 
         mock_urlopen.return_value = BytesIO(
@@ -35,17 +36,18 @@ class TestAddFunction(unittest.TestCase):
             </div>
             """
         )
-        result = fetch_href(url=test_url, href_class="test")
+        bs_elements = fetch_selector(url=test_url, selector=".test")
+        result = [str(bs_element) for bs_element in bs_elements]
         expected = [
-            {"text": "会社名", "リンク": "href_value"},
-            {"text": "会社名", "リンク": "href_value"},
-            {"text": "会社名", "リンク": "href_value"},
+            '<a class="test" href="href_value">text</a>',
+            '<a class="test" href="href_value">text</a>',
+            '<a class="test" href="href_value">text</a>',
         ]
 
         self.assertEqual(result, expected)
 
-    @patch("src.fetch_href.urlopen")
-    def test_fetch_href_a_lot(self, mock_urlopen):
+    @patch("src.fetch_selector.urlopen")
+    def test_fetch_not_exit_selector(self, mock_urlopen):
         """aタグがない場合は空リストを返すこと"""
 
         mock_urlopen.return_value = BytesIO(
@@ -53,7 +55,7 @@ class TestAddFunction(unittest.TestCase):
             <div></div>
             """
         )
-        result = fetch_href(url=test_url, href_class="test")
+        result = fetch_selector(url=test_url, selector=".test")
         expected = []
 
         self.assertEqual(result, expected)

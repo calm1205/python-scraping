@@ -6,8 +6,7 @@ from get_url import get_url
 
 
 HREF_SELECTOR = ".fresnel-greaterThanOrEqual-laptop .ProjectListJobPostItem__CompanyLink-sc-bjcnhh-10"
-PAGE_LIMIT = 2162
-PAGE_LIMIT = 100
+PAGE_LIMIT = 10
 
 
 print("fetching...")
