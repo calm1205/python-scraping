@@ -2,12 +2,14 @@ import csv
 
 from get_unique_dict_array import get_unique_dict_array
 
+TARGET_CSV = "csv/output.csv"
+
 
 def get_unique_csv():
     """csvの重複を削除"""
 
     lines = []
-    with open("csv/output.csv", mode="r", newline="", encoding="utf-8") as file:
+    with open(TARGET_CSV, mode="r", newline="", encoding="utf-8") as file:
         reader = csv.DictReader(file)
         for row in reader:
             lines.append(row)

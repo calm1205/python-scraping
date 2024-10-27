@@ -3,16 +3,16 @@
 
 areas = [
     "tokyo",
-    "osaka",
-    "nagoya",
-    "kyoto",
-    "fukuoka",
-    "tohoku",
-    "hokuriku",
-    "tokai",
-    "kinki",
-    "chugoku",
-    "kyushu",
+    # "osaka",
+    # "nagoya",
+    # "kyoto",
+    # "fukuoka",
+    # "tohoku",
+    # "hokuriku",
+    # "tokai",
+    # "kinki",
+    # "chugoku",
+    # "kyushu",
 ]
 
 occupation_types = [
