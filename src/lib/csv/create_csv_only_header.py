@@ -2,7 +2,7 @@ import csv
 from src.lib.csv.csv_format import csv_interface
 
 
-def export_csv_header(*, output_path):
+def create_csv_only_header(*, output_path):
     """CSVファイルをヘッダーのみ出力"""
 
     with open(output_path, mode="w", newline="", encoding="utf-8") as file:
