@@ -12,6 +12,9 @@ run:
 run-wantedly:
 		docker compose exec app bash -c "python -m src.service.wantedly.main"
 
+run-in-fra:
+		docker compose exec app bash -c "python -m src.service.in-fra.main"
+
 test:
 		docker compose exec app bash -c "make test-python"
 
