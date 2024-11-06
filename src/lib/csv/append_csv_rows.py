@@ -1,5 +1,5 @@
 import csv
-from src.csv_format import csv_interface
+from src.lib.csv.csv_format import csv_interface
 
 
 def append_csv_rows(*, rows, csv_path):

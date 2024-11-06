@@ -9,6 +9,9 @@ in:
 run:
 		docker compose exec app bash -c "python -m src.main"
 
+run-wantedly:
+		docker compose exec app bash -c "python -m src.service.wantedly.main"
+
 test:
 		docker compose exec app bash -c "make test-python"
 
