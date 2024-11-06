@@ -2,13 +2,13 @@ import unittest
 from unittest.mock import patch
 from io import BytesIO
 
-from src.fetch_selector import fetch_selector
+from src.lib.fetch_selector import fetch_selector
 
 test_url = "https://example.com"
 
 
 class TestAddFunction(unittest.TestCase):
-    @patch("src.fetch_selector.urlopen")
+    @patch("src.lib.fetch_selector.urlopen")
     def test_fetch_selector(self, mock_urlopen):
         """href要素を取得できること"""
 
@@ -23,7 +23,7 @@ class TestAddFunction(unittest.TestCase):
 
         self.assertEqual(result, expected)
 
-    @patch("src.fetch_selector.urlopen")
+    @patch("src.lib.fetch_selector.urlopen")
     def test_fetch_selectors(self, mock_urlopen):
         """複数のhref要素を取得できること"""
 
@@ -46,7 +46,7 @@ class TestAddFunction(unittest.TestCase):
 
         self.assertEqual(result, expected)
 
-    @patch("src.fetch_selector.urlopen")
+    @patch("src.lib.fetch_selector.urlopen")
     def test_fetch_not_exit_selector(self, mock_urlopen):
         """aタグがない場合は空リストを返すこと"""
 
