@@ -1,7 +1,7 @@
 import unittest
 import os
 
-from src.export_csv_header import export_csv_header
+from src.lib.csv.export_csv_header import export_csv_header
 
 OUTPUT_PATH = "csv/test.csv"
 
