@@ -1,6 +1,3 @@
-# ENDPOINT = "https://dummyjson.com/test"
-# ENDPOINT = "https://example.com/"
-
 areas = [
     "tokyo",
     # "osaka",
