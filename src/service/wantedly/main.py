@@ -1,7 +1,5 @@
 import time
-import csv
 
-from src.lib.project_dir import project_dir
 from src.lib.csv.create_csv_only_header import create_csv_only_header
 from src.lib.csv.csv_format import get_csv_row
 from src.lib.csv.append_csv_rows import append_csv_rows
