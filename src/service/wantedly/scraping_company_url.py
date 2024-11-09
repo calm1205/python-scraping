@@ -24,10 +24,10 @@ def scraping_company_url():
     with open(TARGET_CSV, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
-        for index, row in enumerate(reader):
-            if index == 10:
-                break
+        for row in reader:
             bs_elements = fetch_selector(url=row["link"], selector=SELECTOR)
+            if not bs_elements:
+                continue
 
             link = bs_elements[0].get("href")
             name = row["text"]
