@@ -3,5 +3,5 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
-  "cSpell.ignoreWords": ["bjcnhh", "doseq"]
+  "cSpell.ignoreWords": ["bjcnhh", "doseq", "wantedly"]
 }
