@@ -1,6 +1,6 @@
-from src.service.in_fra.prefectures import prefectures, prefecture_dict
-from src.service.in_fra.fetch_elements import fetch_elements
-from src.service.in_fra.append_csv import append_csv, CSV_PATH
+from service.in_fra.lib.prefectures import prefectures, prefecture_dict
+from service.in_fra.lib.fetch_elements import fetch_elements
+from service.in_fra.lib.append_csv import append_csv, CSV_PATH
 from src.lib.csv.create_csv_only_header import create_csv_only_header
 
 

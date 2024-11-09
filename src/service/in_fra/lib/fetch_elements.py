@@ -1,4 +1,4 @@
-from src.service.in_fra.get_url import get_url
+from service.in_fra.lib.get_url import get_url
 from src.lib.fetch_soup import fetch_soup
 
 HREF_SELECTOR = ".js-send-imp-event"
