@@ -24,7 +24,7 @@ def scraping_company_url():
     with open(TARGET_CSV, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
-        for row in reader:
+        for index, row in enumerate(reader):
             bs_elements = fetch_selector(url=row["link"], selector=SELECTOR)
             if not bs_elements:
                 continue
@@ -35,7 +35,7 @@ def scraping_company_url():
 
             append_csv_rows(rows=rows, csv_path=OUTPUT_CSV_PATH)
 
-            print(link)
+            print(index, link)
 
 
 scraping_company_url()
